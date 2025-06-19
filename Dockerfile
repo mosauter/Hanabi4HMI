@@ -1,4 +1,4 @@
-FROM python:3.11-slim@sha256:cfd7ed5c11a88ce533d69a1da2fd932d647f9eb6791c5b4ddce081aedf7f7876 as builder
+FROM python:3.11-slim@sha256:9e1912aab0a30bbd9488eb79063f68f42a68ab0946cbe98fecf197fe5b085506 as builder
 
 WORKDIR /build
 
@@ -17,7 +17,7 @@ RUN --mount=type=bind,rw,target=. \
     --mount=type=cache,target=/root/.cache/pip \
     pip install .
 
-FROM python:3.11-slim@sha256:cfd7ed5c11a88ce533d69a1da2fd932d647f9eb6791c5b4ddce081aedf7f7876
+FROM python:3.11-slim@sha256:9e1912aab0a30bbd9488eb79063f68f42a68ab0946cbe98fecf197fe5b085506
 
 COPY --from=builder /usr/local /usr/local
 
