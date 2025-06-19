@@ -56,13 +56,6 @@ build-backend = "poetry.core.masonry.api"
 [tool.black]
 line_length = 120
 
-[tool.pylint.basic]
-good-names = [
-  "a", "c", "l", "m", "i",  # iterators
-  "e",  # errors
-  "_", "__", # unneeded variable
-]
-
 [tool.mypy]
 python_version = "3.8"
 files = "src"
