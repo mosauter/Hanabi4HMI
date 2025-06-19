@@ -232,7 +232,7 @@ def main() -> None:
     if arguments.research_options.record_file.exists():
         raise RecordFileAlreadyExistsError(arguments.research_options.record_file)
 
-    log.debug("Starting server...")
+    log.info("Starting server at http://%s:%s ...", arguments.server_options.host, arguments.server_options.port)
     HanabiServer(
         arguments.server_options,
         game_config=arguments.game_options,
