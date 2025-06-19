@@ -49,8 +49,8 @@ def build() -> None:
         raise FileNotFoundError(msg)
 
     try:
-        subprocess.run(["npm", "install"], cwd=hanabi_ui_location)  # noqa: S603, S607
-        subprocess.run(["npm", "run", "build"], cwd=hanabi_ui_location)  # noqa: S603, S607
+        subprocess.run(["npm", "install"], check=True, cwd=hanabi_ui_location)  # noqa: S607
+        subprocess.run(["npm", "run", "build"], check=True, cwd=hanabi_ui_location)  # noqa: S607
     except FileNotFoundError as e:
         raise NPMNotFoundError from e
 
