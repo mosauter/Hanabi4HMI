@@ -71,7 +71,9 @@ class HanabiRecord:
     time: datetime
     reward: float | None
 
-    def to_line(self, time_before: datetime) -> tuple[int, str, Move | None, FlyweightObservation, float | None, float, list[list[int]]]:
+    def to_line(
+        self, time_before: datetime
+    ) -> tuple[int, str, Move | None, FlyweightObservation, float | None, float, list[list[int]]]:
         return (
             self.player,
             self.player_type,
@@ -84,7 +86,15 @@ class HanabiRecord:
 
     @staticmethod
     def get_title_line() -> list[str]:
-        return ["player", "player_type", "move", "observation_after", "reward", "time_delta_seconds", "vectorized_game_state"]
+        return [
+            "player",
+            "player_type",
+            "move",
+            "observation_after",
+            "reward",
+            "time_delta_seconds",
+            "vectorized_game_state",
+        ]
 
 
 class HanabiRecorder:

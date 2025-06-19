@@ -99,6 +99,7 @@ RAINBOW_TYPES = [
     "selfplay5",
 ]
 
+
 class AgentNotFoundError(Exception):
     def __init__(self) -> None:
         super().__init__("Specified Agent was not found!")

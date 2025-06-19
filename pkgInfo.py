@@ -36,7 +36,9 @@ from __future__ import annotations
 name = "hanabi"
 sqLevel = "basic"
 
-copyright = {    ".": "Copyright (c) Honda Research Institute Europe GmbH",}
+copyright = {
+    ".": "Copyright (c) Honda Research Institute Europe GmbH",
+}
 
 sqOptOutRules = [
     "C10",

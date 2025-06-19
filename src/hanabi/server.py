@@ -170,24 +170,17 @@ class HanabiServer:
             )
 
             if not self._research_config.always_show_full_knowledge:
-                observation["card_knowledge"] = self._correct_knowledge(
-                    player, observation["card_knowledge"]
-                )
+                observation["card_knowledge"] = self._correct_knowledge(player, observation["card_knowledge"])
 
             if self._research_config.disable_discard_pile:
                 observation["discard_pile"] = None
-            elif (
-                self._research_config.only_show_last_n_discards > -1
-                and observation["discard_pile"] is not None
-            ):
+            elif self._research_config.only_show_last_n_discards > -1 and observation["discard_pile"] is not None:
                 observation["discard_pile"] = observation["discard_pile"][
                     -self._research_config.only_show_last_n_discards :
                 ]
 
             if self._research_config.only_show_last_n_events > -1:
-                observation["event_log"] = observation["event_log"][
-                    -self._research_config.only_show_last_n_events :
-                ]
+                observation["event_log"] = observation["event_log"][-self._research_config.only_show_last_n_events :]
 
             emit(
                 "game_state",
@@ -221,9 +214,7 @@ class HanabiServer:
             # TODO(ms): move could reveal something not on my side
             self._last_moves[idx].append(move)
 
-    def _on_move(
-        self, move: Move, *, agent: bool = False
-    ) -> None:
+    def _on_move(self, move: Move, *, agent: bool = False) -> None:
         log.info("Got move, data: %s, by agent? %s", move, agent)
 
         player_that_moved = self._game.current_player

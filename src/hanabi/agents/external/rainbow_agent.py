@@ -57,9 +57,7 @@ class TrainedRainbowAgent:
         network_filename = Path(checkpoints_path).joinpath(f"{config['rainbow_type']}.pt")
         logging.info("Loading agent network %s", network_filename)
         self.network = torch.load(network_filename)
-        self.environment = rl_env.make(
-            environment_name="Hanabi-Full-CardKnowledge", num_players=2, pyhanabi_path=None
-        )
+        self.environment = rl_env.make(environment_name="Hanabi-Full-CardKnowledge", num_players=2, pyhanabi_path=None)
         self.num_actions = self.environment.num_moves()  # 20 moved
         self.num_atoms = 51  # TODO understand settings
         self.vmax = 25  # TODO understand settings
@@ -82,21 +80,15 @@ class TrainedRainbowAgent:
             _description_
         """
         # TODO the original act function is equivalent to DQNAgent._select_action()?
-        illegal_actions = self.get_illegal_actions(
-            observation["legal_moves_as_int"], self.num_actions
-        )
+        illegal_actions = self.get_illegal_actions(observation["legal_moves_as_int"], self.num_actions)
         logging.debug("Legal moves: %s", observation["legal_moves"])
         flat_distribution_logits = self.network(torch.Tensor(observation["vectorized"]))
-        distribution_logits = flat_distribution_logits.reshape(
-            [-1, self.num_actions, self.num_atoms]
-        )
+        distribution_logits = flat_distribution_logits.reshape([-1, self.num_actions, self.num_atoms])
         distribution_probs = distribution_logits.softmax(dim=2)
         q = distribution_probs.mul(self.support).sum(dim=2)
         # Compute argmax assuming illegal actions is a bool tensor, True if
         # action is illegal.
-        illegal_mask = (-torch.inf * torch.Tensor(illegal_actions)).nan_to_num(
-            nan=0, neginf=-torch.inf
-        )
+        illegal_mask = (-torch.inf * torch.Tensor(illegal_actions)).nan_to_num(nan=0, neginf=-torch.inf)
         q_argmax = q.add(illegal_mask).argmax(dim=1)
         logging.info(
             "Chosen move: %d (%s)",

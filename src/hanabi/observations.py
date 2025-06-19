@@ -121,12 +121,8 @@ def from_hanabi_observation(
         "legal_moves": [move.to_dict() for move in observation.legal_moves()],
         "legal_moves_as_int": [env.game.get_move_uid(move) for move in observation.legal_moves()],
         "life_tokens": observation.life_tokens(),
-        "observed_hands": [
-            [card.to_dict() for card in hand] for hand in observation.observed_hands()
-        ],
-        "card_knowledge": [
-            _transform_card_knowledge(hand) for hand in observation.card_knowledge()
-        ],
+        "observed_hands": [[card.to_dict() for card in hand] for hand in observation.observed_hands()],
+        "card_knowledge": [_transform_card_knowledge(hand) for hand in observation.card_knowledge()],
         "num_players": observation.num_players(),
         "event_log": event_log,
         "vectorized": env.observation_encoder.encode(observation),

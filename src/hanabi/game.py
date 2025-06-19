@@ -89,11 +89,7 @@ class SSEHanabiGame:
 
     @property
     def _event_log(self) -> list[Event]:
-        return [
-            Event(move=e.move, player_index=e.player)
-            for e in self.recorder.records
-            if e.move is not None
-        ]
+        return [Event(move=e.move, player_index=e.player) for e in self.recorder.records if e.move is not None]
 
     @property
     def current_player(self) -> int:
@@ -111,9 +107,7 @@ class SSEHanabiGame:
 
             other_player_observation = self.get_observation(other_player_index)
             offset = other_player_observation["current_player_offset"]
-            target_card = other_player_observation["observed_hands"][offset][
-                special_move["card_index"]
-            ]
+            target_card = other_player_observation["observed_hands"][offset][special_move["card_index"]]
             special_move["played_card"] = target_card
 
         # observation: FullObservation
