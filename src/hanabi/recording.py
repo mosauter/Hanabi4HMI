@@ -105,7 +105,7 @@ class HanabiRecorder:
     def __init__(self) -> None:
         self.records: list[HanabiRecord] = []
 
-    def add_record(  # noqa: PLR0913
+    def add_record(
         self,
         player: int,
         player_type: str,
