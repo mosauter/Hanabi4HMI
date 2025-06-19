@@ -72,7 +72,8 @@ class HanabiRecord:
     reward: float | None
 
     def to_line(
-        self, time_before: datetime
+        self,
+        time_before: datetime,
     ) -> tuple[int, str, Move | None, FlyweightObservation, float | None, float, list[list[int]]]:
         return (
             self.player,
