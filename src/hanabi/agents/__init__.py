@@ -44,8 +44,8 @@ from hanabi.agents.external.internal_swapped import InternalSwapped
 from hanabi.agents.external.legal_random_agent import LegalRandomAgent
 from hanabi.agents.external.outer_agent import OuterAgent
 from hanabi.agents.external.piers_agent import PiersAgent
-from hanabi.agents.external.van_den_bergh_agent import VanDenBerghAgent
 from hanabi.agents.external.rainbow_agent import TrainedRainbowAgent
+from hanabi.agents.external.van_den_bergh_agent import VanDenBerghAgent
 from hanabi.agents.human_agent import HumanPlayer
 
 

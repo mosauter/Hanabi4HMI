@@ -40,7 +40,8 @@ from functools import partial
 from pathlib import Path
 from typing import NamedTuple
 
-from hanabi.agents import AGENT_MAP, RAINBOW_TYPES
+from hanabi.agents import AGENT_MAP
+from hanabi.agents import RAINBOW_TYPES
 from hanabi.agents import get_players
 from hanabi.config.game import HanabiGameConfig
 from hanabi.config.research import HanabiResearchConfig

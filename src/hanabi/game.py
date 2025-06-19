@@ -34,7 +34,6 @@ from __future__ import annotations
 from logging import getLogger
 from typing import Any
 
-
 from hanabi_learning_environment.pyhanabi import HanabiEndOfGameType
 from hanabi_learning_environment.pyhanabi import HanabiGame
 from hanabi_learning_environment.pyhanabi import HanabiState

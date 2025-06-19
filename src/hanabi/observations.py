@@ -37,8 +37,8 @@ from typing import TypedDict
 from hanabi_learning_environment.pyhanabi import COLOR_CHAR
 from hanabi_learning_environment.pyhanabi import HanabiCardKnowledge
 from hanabi_learning_environment.pyhanabi import HanabiObservation
-from hanabi_learning_environment.rl_env import HanabiEnv
 from hanabi_learning_environment.pyhanabi import color_idx_to_char
+from hanabi_learning_environment.rl_env import HanabiEnv
 
 from hanabi.card import Card
 from hanabi.moves import Move
