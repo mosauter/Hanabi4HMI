@@ -34,7 +34,7 @@ numpy = [
 flask = "^2.3.2"
 eventlet = "^0.33.3"
 hanabi-learning-environment = [
-    { git = "https://github.com/deepmind/hanabi-learning-environment", markers = "sys_platform != 'win32'" },
+    { git = "https://github.com/akkikiki/hanabi-learning-environment", markers = "sys_platform != 'win32'" },
     { git = "https://github.com/happynoom/hanabi-learning-environment", markers = "sys_platform == 'win32'" },
 ]
 flask-socketio = "^5.3.4"
