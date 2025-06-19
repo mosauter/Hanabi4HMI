@@ -31,8 +31,6 @@
 #
 from __future__ import annotations
 
-from pkg_resources import resource_filename
-
 from hanabi_learning_environment.agents.random_agent import RandomAgent
 from hanabi_learning_environment.agents.simple_agent import SimpleAgent
 from hanabi_learning_environment.rl_env import Agent
