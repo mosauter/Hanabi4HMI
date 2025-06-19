@@ -36,7 +36,7 @@ from __future__ import annotations
 name = "hanabi"
 sqLevel = "basic"
 
-copyright = {
+copyright = {  # noqa: A001
     ".": "Copyright (c) Honda Research Institute Europe GmbH",
 }
 
