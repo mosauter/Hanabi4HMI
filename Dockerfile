@@ -6,7 +6,7 @@ RUN rm -f /etc/apt/apt.conf.d/docker-clean; echo 'Binary::apt::APT::Keep-Downloa
 RUN --mount=type=cache,target=/var/lib/apt \
     --mount=type=cache,target=/var/cache/apt \
     apt-get update && apt-get install -y --no-install-recommends \
-    git=1:2.39.2-1.1 \
+    git=1:2.39.5-0+deb12u2 \
     cmake=3.25.1-1 \
     npm=9.2.0~ds1-1 \
     gcc=4:12.2.0-3 \
