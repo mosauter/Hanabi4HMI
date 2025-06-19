@@ -18,11 +18,6 @@ include = [
 [tool.poetry.scripts]
 hanabi = "hanabi.cli:main"
 
-[[tool.poetry.source]]
-name = "hri-gitlab"
-url = "https://dmz-gitlab.honda-ri.de/api/v4/projects/509/packages/pypi/simple"
-priority = "explicit"
-
 [tool.poetry.dependencies]
 python = ">=3.8,<3.12"
 
